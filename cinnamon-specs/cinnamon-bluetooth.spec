@@ -1,22 +1,22 @@
 Name:           cinnamon-bluetooth
-Version:        3.8.11
+Version:        3.6.0
 Release:        1%{?dist}
 Summary:        Cinnamom Bluetooth
 
 License:        GPL
 URL:            linuxmint.com
-Source0:        cinnamon-bluetooth-%{version}.tar.gz
-
+Source0:        cinnamon-bluetooth-gnome-bluetooth-3.6.zip
+#Patch1:			patch-con.patch
 %description
 Cinnamon bluetooth
 
 %prep
-%setup -q
-
+%setup -q -n cinnamon-bluetooth-gnome-bluetooth-3.6
+#%apply_patches
 
 %build
-autoreconf -if
-%configure
+autoreconf -vif
+%configure2_5x
 make %{?_smp_mflags}
 
 

@@ -1,7 +1,7 @@
 
 Name:           cinnamon-translations
 Version:        2.8.3
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Translations for Cinnamon and Nemo
 Group:   	Graphical desktop/Cinnamon
 License:        GPLv2+
@@ -22,10 +22,10 @@ make
 
 %install
 rm -rf %{buildroot}
-install -m 0755 -d $RPM_BUILD_ROOT%{_datadir}/cinnamon/locale/ 
-cp -Rp usr/share/locale/* $RPM_BUILD_ROOT%{_datadir}/cinnamon/locale/
+install -m 0755 -d $RPM_BUILD_ROOT%{_datadir}/locale/ 
+cp -Rp usr/share/locale/* $RPM_BUILD_ROOT%{_datadir}/locale/
 
-rm $RPM_BUILD_ROOT%{_datadir}/cinnamon/locale/*/LC_MESSAGES/cinnamon-bluetooth.mo
+rm $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/cinnamon-bluetooth.mo
 
 %find_lang cinnamon
 %find_lang nemo
@@ -34,7 +34,7 @@ rm $RPM_BUILD_ROOT%{_datadir}/cinnamon/locale/*/LC_MESSAGES/cinnamon-bluetooth.m
 %files -f cinnamon.lang -f nemo.lang -f cinnamon-control-center.lang
 %defattr(-,root,root)
 %doc COPYING
-%{_datadir}/cinnamon/locale
+%{_datadir}/locale/
 
 
 %clean
@@ -42,6 +42,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Nov 13 2016 Mank <mank@pclinuxos.cz> 2.8.3-2pclos2016
+- update
 * Tue Nov 12 2013 billybot <billybot> 2.0.2-1pclos2013
 - update
 
