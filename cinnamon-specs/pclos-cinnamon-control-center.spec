@@ -156,10 +156,10 @@ install -pm 0644 sounds/* $RPM_BUILD_ROOT/%{_datadir}/cinnamon-control-center/so
 #%{_libdir}/cinnamon-control-center-1/panels/libscreen.so
 %{_libdir}/cinnamon-control-center-1/panels/libsoundnua.so
 %{_libdir}/cinnamon-control-center-1/panels/libuniversal-access.so
-/usr/lib64/cinnamon-control-center-1/panels/libdate_time.so
-/usr/lib64/cinnamon-control-center-1/panels/libwacom-properties.so
-/usr/share/cinnamon-control-center/datetime/backward
-/usr/share/locale/*
+%{_libdir}/cinnamon-control-center-1/panels/libdate_time.so
+%{_libdir}/cinnamon-control-center-1/panels/libwacom-properties.so
+%{_datadir}/cinnamon-control-center/datetime/backward
+%{_datadir}/locale/*
 %{_datadir}/polkit-1/rules.d/cinnamon-control-center.rules
 
 %files devel
@@ -179,6 +179,9 @@ install -pm 0644 sounds/* $RPM_BUILD_ROOT/%{_datadir}/cinnamon-control-center/so
 rm -rf %{buildroot}
 
 %changelog
+* Wed Dec 24 2016 Mank <mank at pclinuxos dot cz> 2.8.1-1mank2016
+- update
+
 * Wed Dec 24 2013 bb <bb> 2.0.9-1pclos2013
 - update
 

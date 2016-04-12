@@ -92,6 +92,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Oct 31 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
+- update
+
 * Thu Oct 31 2013 billybot <billybot> 2.0.3-1pclos2013
 - update
 
