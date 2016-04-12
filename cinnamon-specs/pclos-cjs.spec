@@ -98,6 +98,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Apr 15 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
+- update
+
 * Tue Apr 15 2014 bb <bb> 2.2.0-1pclos2014
 - update
 

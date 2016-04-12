@@ -37,7 +37,6 @@ BuildRequires: pkgconfig(cinnamon-desktop)
 BuildRequires: gettext-devel
 BuildRequires: pkgconfig(egl)
 #---------------------------------------
-#Requires: control-center-filesystem
 Requires: dbus-x11
 Requires: zenity
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -144,6 +143,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Apr 15 2016 Mank <Mank at pclinuxos dot cz> 2.8.4-1mank2016
+- update
+
 * Tue Apr 15 2014 bb <bb> 2.0.5-2pclos2104
 - update
 - patch for cogl

@@ -7,8 +7,6 @@ Version: 2.8.2
 Release: %mkrel 1
 URL:     http://cinnamon.linuxmint.com
 Source0: cinnamon-session-%{version}.tar.gz
-#Patch0:  remove_sessionmigration.patch
-#Patch1:  cinnamon-session-upower.patch
 License: GPLv2+ and LGPLv2+
 Group:   Graphical desktop/Cinnamon
 Requires: gsettings-desktop-schemas >= 0.1.7
@@ -76,7 +74,6 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 %defattr(-,root,root)
 %doc AUTHORS COPYING README
 %doc %{_mandir}/man*/*
-#%{_datadir}/applications/cinnamon-session-properties.desktop
 %{_bindir}/*
 %{_libexecdir}/cinnamon-session-check-accelerated
 %{_libexecdir}/cinnamon-session-check-accelerated-helper
@@ -104,6 +101,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Nov 12 2016 Mank <mank at pclinuxos dot cz> 2.8.2-1mank2016
+- update
+
 * Tue Nov 12 2013 billybot <billybot> 2.0.5-1pclos2013
 - update
 
