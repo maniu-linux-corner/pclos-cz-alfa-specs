@@ -68,7 +68,7 @@ This package contains developer documentation for %{name}.
 #todo update hunspell? USE_SYSTEM_MALLOC
 mkdir -p build
 cd build
-cmake -DENABLE_WEBKIT=ON -DPORT=GTK -DUSE_LIBHYPHEN=OFF -DCMAKE_INSTALL_PREFIX=%{buildroot}/  ..
+cmake -DENABLE_WEBKIT=ON -DPORT=GTK -DUSE_LIBHYPHEN=OFF -DENABLE_INTL=OFF -DCMAKE_INSTALL_PREFIX=%{buildroot}/  ..
 
 mkdir -p DerivedSources/webkit
 mkdir -p DerivedSources/WebCore

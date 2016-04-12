@@ -1,7 +1,7 @@
 Name:           cinnamon-menus
 Version:        2.8.0
-Release:        1%{?dist}
-Summary:        menus for cinnamom
+Release:        2%{?dist}
+Summary:        Menus for cinnamom
 
 License:        GPL
 URL:            linuxmint.com
@@ -24,16 +24,18 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 
+#Remove libtool archives.
+find %{buildroot} -name '*.la' -exec rm -f {} ';'
+
 
 %files
-/usr/include/cinnamon-menus-3.0/gmenu-tree.h
-/usr/lib64/girepository-1.0/CMenu-3.0.typelib
-/usr/lib64/libcinnamon-menu-3.a
-/usr/lib64/libcinnamon-menu-3.la
-/usr/lib64/libcinnamon-menu-3.so
-/usr/lib64/libcinnamon-menu-3.so.0
-/usr/lib64/libcinnamon-menu-3.so.0.0.1
-/usr/lib64/pkgconfig/libcinnamon-menu-3.0.pc
-/usr/share/gir-1.0/CMenu-3.0.gir
+%{_includedir}/cinnamon-menus-3.0/gmenu-tree.h
+%{_libdir}/girepository-1.0/CMenu-3.0.typelib
+%{_libdir}/libcinnamon-menu-3.a
+%{_libdir}/libcinnamon-menu-3.so
+%{_libdir}/libcinnamon-menu-3.so.0
+%{_libdir}/libcinnamon-menu-3.so.0.0.1
+%{_libdir}/pkgconfig/libcinnamon-menu-3.0.pc
+%{_datadir}/gir-1.0/CMenu-3.0.gir
 
 %changelog
