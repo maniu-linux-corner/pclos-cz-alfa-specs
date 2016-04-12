@@ -242,6 +242,9 @@ rm -rf %{buildroot}%{_datadir}/cinnamon/applets/network@cinnamon.org
 rm -rf %{buildroot}
 
 %changelog
+* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.6-1mank2016
+- update
+
 * Tue Apr 15 2014 bb <bb> 2.0.14-2pclos2014
 - rebuild against updated libs
 

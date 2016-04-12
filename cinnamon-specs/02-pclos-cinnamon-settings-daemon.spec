@@ -9,10 +9,6 @@ Group:          Graphical desktop/Cinnamon
 License:        GPLv2+ and LGPLv2+
 URL:            http://cinnamon.linuxmint.com
 Source0:        cinnamon-settings-daemon-%{version}.tar.gz
-#Patch0:         keyboard.patch
-#Patch1:         add_mpris_support.patch
-#Patch2:         cinnamon-settings-daemon-2.0.6-upower_deprecated.patch
-#Patch3:         remove_obsolete_battery_recall_code.patch
 
 #---------------------------------------------------------
 BuildRequires:  dbus-glib-devel
@@ -122,6 +118,9 @@ find %{buildroot} -name '*.la' -delete
 rm -rf %{buildroot}
 
 %changelog
+* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.3-1mank2016
+- update
+
 * Wed Dec 25 2014 bb <bb> 2.0.8-1pclos2013
 - update
 

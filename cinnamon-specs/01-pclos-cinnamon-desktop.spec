@@ -106,6 +106,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1pclos2016
+- update
+
 * Wed Dec 25 2013 bb <bb> 2.0.4-1pclos2013
 - update
 

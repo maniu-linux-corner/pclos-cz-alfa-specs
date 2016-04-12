@@ -39,3 +39,5 @@ find %{buildroot} -name '*.la' -exec rm -f {} ';'
 %{_datadir}/gir-1.0/CMenu-3.0.gir
 
 %changelog
+* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
+- create
