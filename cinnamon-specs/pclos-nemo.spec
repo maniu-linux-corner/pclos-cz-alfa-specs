@@ -18,7 +18,6 @@ Source2:        gtk.css
 Source3:        gtk-dark.css
 Source4:        org.nemo.gschema.xml
 Source5:	pclos-nemo.desktop
-#Patch:		nemo-2.0.8-gksu.patch
 Requires:       gvfs
 Requires:       gnome-icon-theme
 Requires:       cinnamon-desktop
@@ -165,6 +164,10 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Jan 03 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
+- update to 2.8.0
+- remove gksu patch
+
 * Fri Jan 03 2014 bb <bb> 2.0.8-2pclos2013
 - add gksu patch
 - add req. gksu
