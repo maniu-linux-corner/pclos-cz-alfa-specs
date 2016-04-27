@@ -1,6 +1,6 @@
 
 Name:           cinnamon-translations
-Version:        2.8.3
+Version:        3.0.0
 Release:        %mkrel 2
 Summary:        Translations for Cinnamon and Nemo
 Group:   	Graphical desktop/Cinnamon

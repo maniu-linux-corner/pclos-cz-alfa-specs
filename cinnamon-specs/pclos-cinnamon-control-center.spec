@@ -9,7 +9,7 @@
 
 Summary: Utilities to configure the Cinnamon desktop
 Name:    cinnamon-control-center
-Version: 2.8.1
+Version: 3.0.0
 Release: %mkrel 1
 Group:  Graphical desktop/Cinnamon
 License: GPLv2+ and LGPLv2+ and MIT and ISC
@@ -139,12 +139,12 @@ install -pm 0644 sounds/* $RPM_BUILD_ROOT/%{_datadir}/cinnamon-control-center/so
 %{_datadir}/applications/*.desktop
 %{_datadir}/desktop-directories/*
 %{_datadir}/icons/hicolor/*/*/*
-%{_datadir}/cinnamon-control-center/icons/
+#%{_datadir}/cinnamon-control-center/icons/
 %{_datadir}/cinnamon-control-center/sounds/*.oga
 # list all binaries explicitly, so we notice if one goes missing
 %{_bindir}/cinnamon-control-center
-%{_bindir}/cinnamon-sound-applet
-%config %{_sysconfdir}/xdg/autostart/cinnamon-sound-applet.desktop
+#%{_bindir}/cinnamon-sound-applet
+#%config %{_sysconfdir}/xdg/autostart/cinnamon-sound-applet.desktop
 %config %{_sysconfdir}/xdg/menus/cinnamoncc.menu
 %{_libdir}/libcinnamon-control-center.so.1*
 %dir %{_libdir}/cinnamon-control-center-1/
@@ -154,8 +154,8 @@ install -pm 0644 sounds/* $RPM_BUILD_ROOT/%{_datadir}/cinnamon-control-center/so
 #%{_libdir}/cinnamon-control-center-1/panels/libpower.so
 %{_libdir}/cinnamon-control-center-1/panels/libregion.so
 #%{_libdir}/cinnamon-control-center-1/panels/libscreen.so
-%{_libdir}/cinnamon-control-center-1/panels/libsoundnua.so
-%{_libdir}/cinnamon-control-center-1/panels/libuniversal-access.so
+#%{_libdir}/cinnamon-control-center-1/panels/libsoundnua.so
+#%{_libdir}/cinnamon-control-center-1/panels/libuniversal-access.so
 %{_libdir}/cinnamon-control-center-1/panels/libdate_time.so
 %{_libdir}/cinnamon-control-center-1/panels/libwacom-properties.so
 %{_datadir}/cinnamon-control-center/datetime/backward

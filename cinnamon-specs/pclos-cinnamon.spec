@@ -1,8 +1,9 @@
 %global _internal_version  677b05e
 %define date 20130930
+%define pandir %{buildroot}/%{_datadir}/icons/hicolor/scalable/actions/
 
 Name:           cinnamon
-Version:        2.8.6
+Version:        3.0.1
 Release:        %mkrel 1
 Summary:        Window management and application launching for Cinnamon
 Group:          Graphical desktop/Cinnamon
@@ -123,10 +124,12 @@ The emphasis is put on making users feel at home and providing
 
 %prep
 %setup -q
-#%apply_patches
 
 rm -f configure
 rm -rf debian/
+
+sed -i 's/RequiredComponents=\(.*\)$/RequiredComponents=\1polkit-gnome-authentication-agent-1;/' \
+    files/usr/share/cinnamon-session/sessions/cinnamon*.session
 
 NOCONFIGURE=1 ./autogen.sh
 
@@ -137,7 +140,7 @@ export CFLAGS="$RPM_OPT_FLAGS -Wno-error=deprecated-declarations"
 --disable-rpath \
 --enable-compile-warnings=yes \
 --enable-introspection=yes \
---disable-networkmanager
+--disable-networkmanager \
 
 %make V=1
 
@@ -199,10 +202,14 @@ install -m 0744 %SOURCE14 $RPM_BUILD_ROOT/%{_datadir}/cinnamon-session/sessions/
 
 
 #notneeded
+#rm -rf %{buildroot}/%{_datadir}/icons/hicolor/
+rm %{pandir}/pan-down-symbolic.svg %{pandir}/pan-end-symbolic-rtl.svg %{pandir}/pan-end-symbolic.svg %{pandir}/pan-start-symbolic-rtl.svg %{pandir}/pan-start-symbolic.svg %{pandir}/pan-up-symbolic.svg;
+
 rm -rf %{buildroot}/%{_datadir}/xsessions
 
 #network manager not used in pclos
 rm -rf %{buildroot}%{_datadir}/cinnamon/applets/network@cinnamon.org
+
 
 %find_lang %{name}
 %files -f %{name}.lang
@@ -225,7 +232,7 @@ rm -rf %{buildroot}%{_datadir}/cinnamon/applets/network@cinnamon.org
 %{_datadir}/backgrounds/cinnamon/default.jpg
 %{_datadir}/polkit-1/actions/org.cinnamon.settings-users.policy
 %{_datadir}/gtk-doc/*
-%{_datadir}/icons/hicolor/
+%{_datadir}/icons/hicolor/*
 
 %post
 %make_session

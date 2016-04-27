@@ -1,5 +1,5 @@
 Name:           cinnamon-menus
-Version:        2.8.0
+Version:        3.0.0
 Release:        2%{?dist}
 Summary:        Menus for cinnamom
 

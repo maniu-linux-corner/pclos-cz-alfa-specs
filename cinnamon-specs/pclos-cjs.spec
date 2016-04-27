@@ -7,7 +7,7 @@
 %define girname         %mklibname %{name}-gir %{girmajor}
 
 Name:          cjs
-Version:       2.8.0
+Version:       3.0.0
 Release:       %mkrel 1
 Summary:       Javascript Bindings for Cinnamon
 Group:         System/Libraries
@@ -21,7 +21,7 @@ BuildRequires: %{_lib}ffi5-devel
 BuildRequires: %{_lib}girepository-devel
 BuildRequires: %{_lib}glib2.0-devel
 BuildRequires: %{_lib}glib2.0_0
-BuildRequires: %{_lib}mozjs24-devel
+#BuildRequires: %{_lib}mozjs24-devel
 BuildRequires: %{_lib}nspr-devel
 BuildRequires: %{_lib}readline-devel
 
@@ -98,6 +98,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Apr 26 2016 Mank <mank at pclinuxos dot cz> 3.0.0-1mank2016
+- update
 * Tue Apr 15 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
 - update
 

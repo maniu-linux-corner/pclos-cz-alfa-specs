@@ -7,7 +7,7 @@
 
 Name:           nemo
 Summary:        File manager for Cinnamon
-Version:        2.8.6
+Version:        3.0.0
 Release:        %mkrel 1
 License:        GPLv2+ and LGPLv2+
 Group:          Graphical desktop/Cinnamon
@@ -120,7 +120,7 @@ ln -s %{_datadir}/themes/Adwaita/index.theme $RPM_BUILD_ROOT%{_datadir}/themes/A
 
 %files  -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS COPYING COPYING-DOCS COPYING.LIB NEWS README
+%doc AUTHORS COPYING COPYING-DOCS COPYING.LIB NEWS
 %{_datadir}/nemo/
 %{_datadir}/applications/*
 %{_datadir}/mime/packages/nemo.xml

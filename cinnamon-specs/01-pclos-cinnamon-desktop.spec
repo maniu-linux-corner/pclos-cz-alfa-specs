@@ -15,7 +15,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 2.8.0
+Version: 3.0.0
 Release: %mkrel 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Cinnamon
@@ -87,13 +87,20 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %{_bindir}/cinnamon-desktop-migrate-mediakeys
 %{_libdir}/libcinnamon-desktop*.so.%{major}*
 %{_libdir}/girepository-1.0/C*-3.0.typelib
+%{_libdir}/girepository-1.0/Cvc-1.0.typelib
+%{_libdir}/libcvc.so
+%{_libdir}/libcvc.so.0
+%{_libdir}/libcvc.so.0.0.0
+
 
 %files devel
 %defattr(-,root,root)
 %{_libdir}/libcinnamon-desktop.so
 %{_libdir}/pkgconfig/cinnamon-desktop.pc
+%{_libdir}/pkgconfig/cvc.pc
 %{_includedir}/cinnamon-desktop/
 %{_datadir}/gir-1.0/C*-3.0.gir
+%{_datadir}/gir-1.0/Cvc-1.0.gir
 
 %posttrans
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &>/dev/null || :
@@ -106,7 +113,10 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1pclos2016
+* Wed Mar 20 2016 Mank <mank at pclinuxos dot cz> 2.8.1-1pclos2016
+- update
+
+* Wed Dec 25 2015 Mank <mank at pclinuxos dot cz> 2.8.0-1pclos2016
 - update
 
 * Wed Dec 25 2013 bb <bb> 2.0.4-1pclos2013

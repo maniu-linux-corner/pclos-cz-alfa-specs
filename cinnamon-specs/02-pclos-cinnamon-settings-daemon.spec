@@ -1,8 +1,8 @@
 %global _internal_version  53e0491
-%global date 20130930
+%global date 20160407
 
 Name:           cinnamon-settings-daemon
-Version:        2.8.3
+Version:        3.0.0
 Release:        %mkrel 1
 Summary:        The daemon sharing settings from CINNAMON to GTK+/KDE applications
 Group:          Graphical desktop/Cinnamon
@@ -118,7 +118,9 @@ find %{buildroot} -name '*.la' -delete
 rm -rf %{buildroot}
 
 %changelog
-* Wed Dec 25 2016 Mank <mank at pclinuxos dot cz> 2.8.3-1mank2016
+* Wed Apr 20 2016 Mank <mank at pclinuxos dot cz> 2.8.4-1mank2016
+- update
+* Wed Dec 25 2015 Mank <mank at pclinuxos dot cz> 2.8.3-1mank2016
 - update
 
 * Wed Dec 25 2014 bb <bb> 2.0.8-1pclos2013
