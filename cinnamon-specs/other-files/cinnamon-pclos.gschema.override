@@ -1,0 +1,25 @@
+[org.cinnamon]
+favorite-apps=['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop']
+panel-launchers=['nemo.desktop', 'pclinuxos-drakconf.desktop', 'synaptic.desktop', 'firefox.desktop']
+
+[org.cinnamon.sounds]
+login-enabled=true
+login-file='/usr/share/sounds/freedesktop/stereo/service-login.oga'
+plug-enabled=true
+plug-file='/usr/share/sounds/freedesktop/stereo/device-added.oga'
+unplug-enabled=true
+unplug-file='/usr/share/sounds/freedesktop/stereo/device-removed.oga'
+
+[org.cinnamon.desktop.sound]
+volume-sound-enabled=true
+volume-sound-file='/usr/share/sounds/freedesktop/stereo/audio-volume-change.oga'
+
+[org.cinnamon.screensaver]
+ask-for-away-message=false
+
+[org.cinnamon.settings-daemon.peripherals.keyboard]
+input-sources-switcher='alt-shift'
+
+[org.cinnamon.desktop.background]
+picture-uri='file:///usr/share/backgrounds/cinnamon/default.jpg'
+
