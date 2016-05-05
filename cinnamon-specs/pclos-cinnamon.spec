@@ -131,7 +131,13 @@ rm -rf debian/
 sed -i 's/RequiredComponents=\(.*\)$/RequiredComponents=\1polkit-gnome-authentication-agent-1;/' \
     files/usr/share/cinnamon-session/sessions/cinnamon*.session
 
-NOCONFIGURE=1 ./autogen.sh
+NOCONFIGURE=1 ./autogen.sh --prefix=/usr \
+               --sysconfdir=/etc \
+               --libexecdir=/usr/lib64/cinnamon \
+               --localstatedir=/var \
+               --disable-static \
+               --disable-schemas-compile \
+               --enable-compile-warnings=yes
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -Wno-error=deprecated-declarations"
@@ -141,7 +147,9 @@ export CFLAGS="$RPM_OPT_FLAGS -Wno-error=deprecated-declarations"
 --enable-compile-warnings=yes \
 --enable-introspection=yes \
 --disable-networkmanager \
+--disable-schemas-compile
 
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 %make V=1
 
 %install

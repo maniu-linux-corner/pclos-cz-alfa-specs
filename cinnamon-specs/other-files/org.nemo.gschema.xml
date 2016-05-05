@@ -467,12 +467,21 @@
     <key name="font" type="s">
       <default l10n="messages" context="desktop-font">''</default>
       <summary>Desktop font</summary>
-      <description>The font description used for the icons on the desktop.</description>
+      <description>The font _description used for the icons on the desktop.</description>
+    </key>
+    <key name="desktop-layout" type="s">
+      <default>"true::false"</default>
+      <summary>Desktop layout</summary>
+      <description>Format bool:bool, show desktop folder on primary monitor:show desktop on remaining monitors</description>
+    </key>
+    <key name="show-orphaned-desktop-icons" type="b">
+      <default>true</default>
+      <summary>Whether to show icons from inactive monitors on another monitor</summary>
     </key>
     <key name="show-desktop-icons" type="b">
       <default>true</default>
-      <summary>Allow Nemo to manage the desktop</summary>
-      <description>If this is set to true, Nemo will autostart and manage the desktop</description>
+      <summary>Deprecated: Allow Nemo to manage the desktop</summary>
+      <description>Deprecated: If this is set to true, Nemo will autostart and manage the desktop</description>
     </key>
     <key name="home-icon-visible" type="b">
       <default>false</default>

@@ -8,7 +8,7 @@
 Name:           nemo
 Summary:        File manager for Cinnamon
 Version:        3.0.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 License:        GPLv2+ and LGPLv2+
 Group:          Graphical desktop/Cinnamon
 URL:            https://github.com/linuxmint/nemo
