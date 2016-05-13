@@ -1,5 +1,5 @@
 Name:		nemo-share
-Version:	2.8.0
+Version:	3.0.0
 Summary:	Share extension for nemo
 Release:	%mkrel 1
 License:	GPLv2+
@@ -36,7 +36,9 @@ sh autogen.sh --prefix=/usr
 
 
 %changelog
-* Sat Oct 26 2016 Mank <mank at pclinuxos.cz> 2.8.0-1mank2016
+* Sat Mar 26 2016 Mank <mank at pclinuxos.cz> 3.0.0-1mank2016
+- update to 3.0.0
+* Sat Oct 26 2015 Mank <mank at pclinuxos.cz> 2.8.0-1mank2015
 - Create pkg
 
 

@@ -1,5 +1,5 @@
 Name:		nemo-media-columns
-Version:	2.8.0
+Version:	3.0.0
 Summary:	A media column extension for nemo
 Release:	%mkrel 1
 License:	GPLv2+
