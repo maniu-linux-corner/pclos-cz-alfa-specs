@@ -12,6 +12,11 @@ BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:	nemo-devel
 BuildRequires: python
 Requires:	nemo 
+Requires:	python3-pillow
+Requires:	python-kaa-base 
+Requires:	python-kaa-metadata
+Requires:   python-exiv2 
+Requires:   mutagen
 
 %description
 audio tab extension for Nemo for the Cinnamon desktop environment. 
@@ -36,5 +41,6 @@ audio tab extension for Nemo for the Cinnamon desktop environment.
 %changelog
 * Sat Oct 26 2016 Mank <mank at pclinuxos dot cz> 2.8.0-1mank2016
 - Create pkg
+
 
 

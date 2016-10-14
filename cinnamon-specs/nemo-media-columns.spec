@@ -11,6 +11,12 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gobject-2.0) 
 BuildRequires:	nemo-devel
 Requires:	nemo 
+Requires:	nemo 
+Requires:	python3-pillow
+Requires:	python-kaa-base 
+Requires:	python-kaa-metadata
+Requires:   python-exiv2 
+Requires:   mutagen
 
 %description
 media columns extension for Nemo for the Cinnamon desktop environment. 
