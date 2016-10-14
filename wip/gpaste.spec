@@ -1,14 +1,14 @@
 %global alt_name GPaste
 
 Name:           gpaste
-Version:        3.16.3.1
+Version:        3.22.0
 Release:        1%{?dist}
 Summary:        Clipboard management system
 
 Group:          User Interface/Desktops
 License:        GPLv3+
 URL:            https://github.com/Keruspe/GPaste
-Source0:        http://www.imagination-land.org/files/%{name}/%{name}-%{version}.zip
+Source0:        http://www.imagination-land.org/files/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:  appstream-util
 BuildRequires:  chrpath
@@ -100,19 +100,23 @@ This package provides the GNOME Shell extension for GPaste.
 
 
 %build
-NOCONFIGURE=1 ./autogen.sh
+#NOCONFIGURE=1 ./autogen.sh -f
+#autoreconf -fi
 %configure \
   --disable-schemas-compile \
   --disable-silent-rules \
   --disable-unity \
   --enable-applet \
-  --enable-vala \
-  --disable-gnome-shell-extension
-  
+  --disable-gnome-shell-extension 
+#//  --enable-vala \  
+mkdir -p bindings/
+touch bindings/gpaste-1.0.deps #bit hack
 %make
 
 
 %install
+mkdir -p bindings/
+touch bindings/gpaste-1.0.deps
 make install DESTDIR=$RPM_BUILD_ROOT
 
 rm $RPM_BUILD_ROOT%{_libdir}/*.la
@@ -153,27 +157,27 @@ fi
 
 %files
 %doc AUTHORS NEWS README.md THANKS
-%{_bindir}/%{name}
-%{_libdir}/gpaste/gpaste-settings
-#%{_bindir}/%{name}-client
+#%{_bindir}/%{name}
+#%{_libdir}/gpaste/gpaste-settings
+%{_bindir}/%{name}-client
 %dir %{_libexecdir}/%{name}/
 %{_libexecdir}/%{name}/gpaste-daemon
 %{_datadir}/dbus-1/services/org.gnome.GPaste.service
 %{_datadir}/glib-2.0/schemas/*.xml
-#%{_datadir}/bash-completion/
-#%{_datadir}/zsh/
+%{_datadir}/bash-completion/
+%{_datadir}/zsh/
 %{_mandir}/man1/*.1.*
-%{_datadir}/appdata/org.gnome.GPaste.Settings.appdata.xml
-%{_datadir}/applications/org.gnome.GPaste.Settings.desktop
-%{_datadir}/dbus-1/services/org.gnome.GPaste.Settings.service
+#%{_datadir}/appdata/org.gnome.GPaste.Settings.appdata.xml
+#%{_datadir}/applications/org.gnome.GPaste.Settings.desktop
+#%{_datadir}/dbus-1/services/org.gnome.GPaste.Settings.service
 
 %files libs -f %{alt_name}.lang
-%{_libdir}/girepository-1.0/%{alt_name}-1.0.typelib
+#%{_libdir}/girepository-1.0/%{alt_name}-1.0.typelib
 %{_libdir}/*.so.*
 
 
 %files devel
-%{_datadir}/gir-1.0/*.gir
+#%{_datadir}/gir-1.0/*.gir
 %{_datadir}/vala/vapi/*
 %{_includedir}/%{name}/
 %{_libdir}/*.so
