@@ -11,6 +11,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gobject-2.0) 
 BuildRequires:	nemo-devel
 BuildRequires: python
+BuildRequires: python-distutils-extra
 Requires:	nemo 
 Requires:	python3-pillow
 Requires:	python-kaa-base 
