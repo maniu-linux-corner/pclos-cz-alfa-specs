@@ -1,7 +1,7 @@
 
 Name:           cinnamon-translations
-Version:        3.0.0
-Release:        %mkrel 2
+Version:        3.2.2
+Release:        %mkrel 1
 Summary:        Translations for Cinnamon and Nemo
 Group:   	Graphical desktop/Cinnamon
 License:        GPLv2+

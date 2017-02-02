@@ -1,5 +1,5 @@
 Name:		nemo-python
-Version:	3.0.0
+Version:	3.2.0
 Summary:	python nemo
 Release:	%mkrel 1
 License:	GPLv2+

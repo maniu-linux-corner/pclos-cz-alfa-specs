@@ -1,6 +1,6 @@
 Name:           pix
 Version:        1.2.1
-Release:        1
+Release:        2
 Summary:        pix
 
 License:        GPL
@@ -11,6 +11,15 @@ Source0:        pix-%{version}.zip
 
 %description
 ...
+
+
+%package devel
+Summary: %{name} devel files for
+Group:    Development/C
+Requires: %{name}
+Provides: %name-devel = %{version}
+
+%description devel
 
 %prep
 %setup -q
@@ -39,13 +48,18 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 
+# we don't want these
+find %{buildroot} -name "*.la" -delete
 
 %files
 %{_bindir}/*
 %{_datadir}/*
-%{_includedir}/*
 %{_libdir}/pix/
+
+%files devel
+%{_includedir}/*
 %{_libdir}/pkgconfig/*
+
 %changelog
 * Sat Jan  7 2017 mank
 - import to pclinuxosczsk

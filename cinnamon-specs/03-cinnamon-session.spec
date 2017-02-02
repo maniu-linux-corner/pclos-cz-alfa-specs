@@ -3,7 +3,7 @@
 
 Summary: Cinnamon session manager
 Name:    cinnamon-session
-Version: 3.0.0
+Version: 3.2.0
 Release: %mkrel 1
 URL:     http://cinnamon.linuxmint.com
 Source0: cinnamon-session-%{version}.tar.gz

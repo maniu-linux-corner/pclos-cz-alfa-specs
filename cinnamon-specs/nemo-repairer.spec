@@ -1,5 +1,5 @@
 Name:		nemo-repairer
-Version:	3.0.0
+Version:	3.2.0
 Summary:	extension for nemo
 Release:	%mkrel 1
 License:	GPLv2+

@@ -3,13 +3,13 @@
 %define pandir %{buildroot}/%{_datadir}/icons/hicolor/scalable/actions/
 
 Name:           cinnamon
-Version:        3.0.1
+Version:        3.2.2
 Release:        %mkrel 1
 Summary:        Window management and application launching for Cinnamon
 Group:          Graphical desktop/Cinnamon
 License:        GPLv2+ and LGPLv2+
 URL:            http://cinnamon.linuxmint.com
-Source0:        %{name}-%{version}.tar.gz
+Source0:        cinnamon-%{version}.tar.gz
 Source1:	default-32.jpg
 Source2:	default-64.jpg
 Source3:	cinnamon-pclos.gschema.override
@@ -141,7 +141,7 @@ NOCONFIGURE=1 ./autogen.sh --prefix=/usr \
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -Wno-error=deprecated-declarations"
-%configure2_5x \
+%configure \
 --disable-static \
 --disable-rpath \
 --enable-compile-warnings=yes \
@@ -167,7 +167,7 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon2d.deskto
 #desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-add-panel-launcher.desktop
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-settings-users.desktop
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-menu-editor.desktop
-desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-nm-applet.desktop
+#desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-nm-applet.desktop
 
 install -m 0644 %SOURCE8 $RPM_BUILD_ROOT/%{_datadir}/applications/cinnamon-settings.desktop
 
@@ -222,7 +222,7 @@ rm -rf %{buildroot}%{_datadir}/cinnamon/applets/network@cinnamon.org
 %find_lang %{name}
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc COPYING README NEWS AUTHORS
+%doc COPYING README AUTHORS
 %{_bindir}/*
 %{_sysconfdir}/xdg/menus/*
 %{_datadir}/applications/*

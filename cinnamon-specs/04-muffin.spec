@@ -1,8 +1,8 @@
 %global _internal_version  cb72525
 
 Name:          muffin
-Version:       3.0.0
-Release:       %mkrel 1
+Version:       3.2.0
+Release:       %mkrel 2
 Summary:       Window and compositing manager based on Clutter
 Group:         Graphical desktop/Cinnamon
 License:       GPLv2+
@@ -12,7 +12,7 @@ Source0:       muffin-%{version}.tar.gz
 #Patch1:        automake.patch
 #Patch2:        gtkdoc.patch
 #----------------------------------------------------------
-BuildRequires: pkgconfig(clutter-1.0) >= 1.7.5
+#BuildRequires: pkgconfig(clutter-1.0)
 BuildRequires: pkgconfig(pango)
 BuildRequires: pkgconfig(libstartup-notification-1.0)
 BuildRequires: pkgconfig(gtk+-3.0) >= 3.3.3

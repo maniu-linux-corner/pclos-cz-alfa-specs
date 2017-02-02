@@ -2,7 +2,7 @@
 %global date 20160407
 
 Name:           cinnamon-settings-daemon
-Version:        3.0.0
+Version:        3.2.0
 Release:        %mkrel 1
 Summary:        The daemon sharing settings from CINNAMON to GTK+/KDE applications
 Group:          Graphical desktop/Cinnamon
@@ -35,7 +35,7 @@ BuildRequires:  pkgconfig(xfixes)
 BuildRequires:  pkgconfig(xtst)
 BuildRequires:  libxkbfile-devel
 BuildRequires:  pkgconfig(ibus-1.0)
-BuildRequires:  xsltproc
+BuildRequires:  xsltproc colord-devel
 BuildRequires:  docbook-style-xsl
 BuildRequires:  %{_lib}upower-glib-devel
 BuildRequires:  %{_lib}gnomekbd-devel
@@ -90,8 +90,8 @@ find %{buildroot} -name '*.la' -delete
 %{_libexecdir}/csd-datetime-mechanism
 %{_libexecdir}/csd-locate-pointer
 %{_libexecdir}/csd-printer
-%{_libexecdir}/csd-list-wacom
-%{_libexecdir}/csd-wacom-led-helper
+#%{_libexecdir}/csd-list-wacom
+#%{_libexecdir}/csd-wacom-led-helper
 %{_datadir}/applications/cinnamon-settings-daemon.desktop
 %{_datadir}/cinnamon-settings-daemon/
 %{_datadir}/dbus-1/system-services/org.cinnamon.SettingsDaemon.DateTimeMechanism.service

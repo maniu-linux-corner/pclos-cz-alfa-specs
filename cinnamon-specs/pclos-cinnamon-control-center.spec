@@ -9,7 +9,7 @@
 
 Summary: Utilities to configure the Cinnamon desktop
 Name:    cinnamon-control-center
-Version: 3.0.0
+Version: 3.2.0
 Release: %mkrel 1
 Group:  Graphical desktop/Cinnamon
 License: GPLv2+ and LGPLv2+ and MIT and ISC

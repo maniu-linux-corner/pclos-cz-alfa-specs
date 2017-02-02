@@ -1,5 +1,5 @@
 Name:		nemo-extensions-fileroller
-Version:	3.0.0
+Version:	3.2.0
 Summary:	A file-roller extension for nemo
 Release:	%mkrel 1
 License:	GPLv2+

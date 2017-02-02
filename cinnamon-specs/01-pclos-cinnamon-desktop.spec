@@ -15,8 +15,8 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 3.0.0
-Release: %mkrel 1
+Version: 3.2.4
+Release: %mkrel 2
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Cinnamon
 URL:     http://cinnamon.linuxmint.com
@@ -28,7 +28,7 @@ BuildRequires: gobject-introspection-devel
 BuildRequires: x11-data-xkbdata
 BuildRequires: gtk-doc >= %{gtk_doc_version}
 BuildRequires: intltool
-BuildRequires: itstool
+BuildRequires: itstool lib64pam-devel
 BuildRequires: %{_lib}glib2.0_0-devel >= %{glib2_version}
 BuildRequires: %{_lib}startup-notification-1-devel >= %{startup_notification_version}
 BuildRequires: %{_lib}xkbfile-devel
@@ -83,18 +83,19 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %defattr(-,root,root)
 %doc AUTHORS COPYING COPYING.LIB README
 %{_datadir}/glib-2.0/schemas/org.cinnamon.*.xml
-%{_libexecdir}/cinnamon-rr-debug
+#%{_libexecdir}/cinnamon-rr-debug
 %{_bindir}/cinnamon-desktop-migrate-mediakeys
 %{_libdir}/libcinnamon-desktop*.so.%{major}*
 %{_libdir}/girepository-1.0/C*-3.0.typelib
 %{_libdir}/girepository-1.0/Cvc-1.0.typelib
-%{_libdir}/libcvc.so
 %{_libdir}/libcvc.so.0
 %{_libdir}/libcvc.so.0.0.0
+#/etc/pam.d/cinnamon-desktop
 
 
 %files devel
 %defattr(-,root,root)
+%{_libdir}/libcvc.so
 %{_libdir}/libcinnamon-desktop.so
 %{_libdir}/pkgconfig/cinnamon-desktop.pc
 %{_libdir}/pkgconfig/cvc.pc

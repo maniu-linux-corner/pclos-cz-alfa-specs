@@ -1,5 +1,5 @@
 Name:		nemo-compare
-Version:	3.0.0
+Version:	3.2.0
 Summary:	extension for nemo
 Release:	%mkrel 1
 License:	GPLv2+
@@ -26,6 +26,10 @@ install -D data/nemo-compare-preferences.desktop -t "%{buildroot}/usr/share/appl
 install -D data/nemo-compare-notification -t "%{buildroot}/usr/share/%{name}"
 install -D src/* -t "%{buildroot}/usr/share/%{name}/"
 
+
+%postun
+rm /usr/share/nemo-python/extensions/nemo-compare.py
+rm /usr/bin/nemo-compare-preferences
 
 %post
 ln -s /usr/share/nemo-compare/nemo-compare.py "/usr/share/nemo-python/extensions/nemo-compare.py"

@@ -1,7 +1,7 @@
 Name:		nemo-media-columns
-Version:	3.0.0
+Version:	3.2.0
 Summary:	A media column extension for nemo
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 URL:		https://github.com/linuxmint/nemo-extensions
 Group:		Graphical desktop/Cinnamon
@@ -23,7 +23,7 @@ media columns extension for Nemo for the Cinnamon desktop environment.
 
 
 %prep
-%setup -q -n nemo-media-columns-%{version}
+%setup -q
 
 
 %install

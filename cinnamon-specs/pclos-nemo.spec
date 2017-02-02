@@ -7,8 +7,8 @@
 
 Name:           nemo
 Summary:        File manager for Cinnamon
-Version:        3.0.0
-Release:        %mkrel 2
+Version:        3.2.2
+Release:        %mkrel 1
 License:        GPLv2+ and LGPLv2+
 Group:          Graphical desktop/Cinnamon
 URL:            https://github.com/linuxmint/nemo
@@ -18,6 +18,8 @@ Source2:        gtk.css
 Source3:        gtk-dark.css
 Source4:        org.nemo.gschema.xml
 Source5:	pclos-nemo.desktop
+#Patch0:		fix-desktop-redraw.patch
+#Patch1:		window-remove-custom-get_preferred_width-height-impl.patch
 Requires:       gvfs
 Requires:       gnome-icon-theme
 Requires:       cinnamon-desktop
@@ -125,7 +127,7 @@ ln -s %{_datadir}/themes/Adwaita/index.theme $RPM_BUILD_ROOT%{_datadir}/themes/A
 %{_datadir}/applications/*
 %{_datadir}/mime/packages/nemo.xml
 %{_bindir}/*
-%{_libdir}/nemo-extensions-list
+%{_libexecdir}/nemo-extensions-list
 %{_datadir}/icons/hicolor/*/apps/nemo.png
 %{_datadir}/icons/hicolor/*/actions/nemo-eject.png
 %{_datadir}/icons/hicolor/scalable/*/*.svg

@@ -7,7 +7,7 @@
 %define girname         %mklibname %{name}-gir %{girmajor}
 
 Name:          cjs
-Version:       3.0.0
+Version:       3.2.0
 Release:       %mkrel 1
 Summary:       Javascript Bindings for Cinnamon
 Group:         System/Libraries
@@ -17,7 +17,7 @@ Source0: http://leigh123linux.fedorapeople.org/pub/cjs/source/cjs-%{version}.tar
 BuildRequires: %{_lib}cairo-devel
 BuildRequires: %{_lib}dbus-1-devel
 BuildRequires: %{_lib}dbus-glib-1_2-devel
-BuildRequires: %{_lib}ffi5-devel
+BuildRequires: %{_lib}ffi-devel
 BuildRequires: %{_lib}girepository-devel
 BuildRequires: %{_lib}glib2.0-devel
 BuildRequires: %{_lib}glib2.0_0
@@ -50,6 +50,7 @@ Group: Development/Libraries
 Requires:       %{libname} = %{version}-%{release}
 Provides:       %{name}-devel = %{version}-%{release}
 Provides:       lib%{name}-devel = %{version}-%{release}
+AutoReq: No
 
 %description -n %{develname}
 Files for development with %{name}.

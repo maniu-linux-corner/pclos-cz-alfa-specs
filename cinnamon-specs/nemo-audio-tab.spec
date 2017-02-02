@@ -1,7 +1,7 @@
 Name:		nemo-audio-tab
-Version:	3.0.0
+Version:	3.2.0
 Summary:	A audio tab extension for nemo
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 URL:		https://github.com/linuxmint/nemo-extensions
 Group:		Graphical desktop/Cinnamon
@@ -24,17 +24,17 @@ audio tab extension for Nemo for the Cinnamon desktop environment.
 
 
 %prep
-%setup -q -n nemo-audio-tab-%{version}
+%setup -q
 
 %build
 ./setup.py build
 
 %install
-./setup.py install --root=%{buildroot}
+./setup.py install --root=%{buildroot} --install-lib=/usr/lib64//python2.7/site-packages/
 
 %files 
 %defattr(-,root,root)
-/usr/lib/python2.7/site-packages/nemo_audio_tab-%{version}-py2.7.egg-info
+%{_libdir}/python2.7/site-packages/nemo_audio_tab-%{version}-py2.7.egg-info
 %{_datadir}/nemo-python/extensions/nemo-audio-tab.glade
 %{_datadir}/nemo-python/extensions/nemo-audio-tab.py
 

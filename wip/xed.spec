@@ -1,14 +1,23 @@
 Name:           xed
 Version:        1.2.2
-Release:        1
+Release:        2
 Summary:        xed
 
 License:        GPL
 URL:            https://github.com/linuxmint/xed
 Source0:        xed-%{version}.zip
+Requires: xapps
 
 %description
 
+
+%package devel
+Summary: %{name} devel files for
+Group:    Development/C
+Requires: %{name}
+Provides: %name-devel = %{version}
+
+%description devel
 
 %prep
 %setup -q
@@ -24,14 +33,18 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 %make_install
 
+# we don't want these
+find %{buildroot} -name "*.la" -delete
 
 %files
 %{_bindir}/*
 %{_datadir}/*
-%{_includedir}/%{name}/*
 %{_libdir}/%{name}/*
 %{_libexecdir}/%{name}/*
-/usr/lib64/pkgconfig/xed.pc
+
+%files devel
+%{_includedir}/%{name}/*
+%{_libdir}/pkgconfig/xed.pc
 
 %changelog
 * Sat Jan  7 2017 mank
